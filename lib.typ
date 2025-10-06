@@ -12,7 +12,7 @@
 
 // 基本的なスタイルの設定
 #let style(doc) = {
-  set page(paper: "a4")
+  set page(paper: "a4", numbering: "— 1/1 —")
   set text(11pt, font: serif, lang: "ja")
   set par(
     first-line-indent: (
