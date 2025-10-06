@@ -29,6 +29,8 @@
     it
     v(5pt)
   }
+
+  show: remove-cjk-break-space
   doc
 }
 
