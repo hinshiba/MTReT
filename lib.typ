@@ -20,6 +20,7 @@
       amount: 1em,
     ),
     leading: 0.7em,
+    spacing: 0.8em,
   )
 
   show heading: set text(font: sans)
