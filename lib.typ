@@ -35,9 +35,11 @@
 }
 
 // 全角コンマ等への変更
-#let repl_full-en_punctuation() = {
+#let repl_full-en_punctuation(doc) = {
   show "、": "，"
   show "。": "．"
+
+  doc
 }
 
 #let report() = {}
