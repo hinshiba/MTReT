@@ -31,6 +31,8 @@
   }
 
   show: remove-cjk-break-space
+  show raw: set text(font: ("DejaVu Sans Mono", "Harano Aji Gothic"))
+  show figure: set block(breakable: true)
   doc
 }
 
