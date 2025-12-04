@@ -1,10 +1,13 @@
 #import "@preview/cjk-unbreak:0.2.0": remove-cjk-break-space
+#import "@preview/zebraw:0.6.1": *
+#import "fastfig.typ": *
 
 // --------------------------------
 // 各種変数
 // --------------------------------
 #let serif = ("New Computer Modern", "Harano Aji Mincho")
 #let sans = ("New Computer Modern Sans", "Harano Aji Gothic")
+#let typewriter = ("DejaVu Sans Mono", "Morale")
 #let title_size = 1.6em
 #let subtitle_size = 1.2em
 #let title_subcontent_size = 1.1em
@@ -30,7 +33,10 @@
     v(5pt)
   }
 
+  show raw: set text(font: ("DejaVu Sans Mono", "Moralerspace Xenon HW"))
+
   show: remove-cjk-break-space
+  show: zebraw.with(background-color: white, lang: false)
   doc
 }
 
@@ -42,7 +48,6 @@
   doc
 }
 
-#let report() = {}
 
 // タイトルの出力
 #let titles(title, subtitle: none) = {
@@ -85,3 +90,4 @@
       #today.display("提出日" + date_format)]
   }
 }
+
