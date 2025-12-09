@@ -16,8 +16,7 @@ Modular Typst REport Template for ja students.
 
 ## 使い方
 
-1. このリポジトリをサブモジュールとして追加するか，`lib.typ`と`fastfig.typ`をプロジェクトにコピーします．
-2. 以下のように`main.typ`ファイルを作成します．
+以下のように`main.typ`ファイルを作成します．
 
 ```typ
 // パッケージを読み込み
