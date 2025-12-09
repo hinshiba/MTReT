@@ -19,10 +19,10 @@
   set text(11pt, font: serif, lang: "ja")
   set par(
     first-line-indent: (
-      all: true,
+      all: false, // 見出しで問題になるので見出し側で修正
       amount: 1em,
     ),
-    leading: 0.7em,
+    leading: 0.8em,
     spacing: 0.8em,
   )
 
@@ -30,7 +30,8 @@
   set heading(numbering: "1.")
   show heading: it => {
     it
-    v(5pt)
+    par()[] // 見出しではインデント付き改段落を要する
+    v(-0.5em)
   }
 
   show raw: set text(font: ("DejaVu Sans Mono", "Moralerspace Xenon HW"))
