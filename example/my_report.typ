@@ -1,14 +1,10 @@
 #import "../lib.typ": *
-#import "@preview/codly:1.3.0": *
-#import "@preview/codly-languages:0.1.1": *
-
+#import "@preview/zebraw:0.6.1": *
 #import "@preview/enja-bib:0.1.0": *
 #import bib-setting-plain: *
-#show: bib-init
 
-#show: codly-init.with()
+#show: bib-init
 #show: style
-#codly(zebra-fill: none)
 
 #titles("カハンの加算アルゴリズムの実装と考察", subtitle: "数値計算法 第一回レポート")
 #name(id: "hinshiba", "瀕死")
@@ -25,8 +21,8 @@
 今回作成したカハンの加算アルゴリズムの`Python`による実装を@code:impl に示す．
 なお，実行可能なプログラムは`GoogleForm`にて別途提出してある．
 
-#figure(supplement: "code", caption: [Pythonによる実装])[
-  ```python
+#fcode(caption: [Pythonによる実装], label: <code:impl>, placement: none)[
+  ```py
   def kahan_add(vals: NDArray[np.float32]) -> np.float32:
       ans = np.float32(0)
       comp: np.float32 = np.float32(0)
@@ -36,8 +32,7 @@
           comp = (temp - ans) - x
           ans = temp
       return ans
-  ``` ]<code:impl>
-//
+  ``` ]
 6行目の，変数`temp`にいままでの総和`ans`と入力`x`を加算する操作を繰り返し行うことで加算が達成される．
 このとき，加算後の`temp`はには情報落ちの誤差等が含まれている可能性がある．これを7行目によって求め，変数`comp`に保存する．
 そして，次回の加算前に，`comp`を考慮した値に入力`x`を調整するという実装である．
@@ -47,20 +42,20 @@
 ここでは非常に簡単な実行結果のみとし，詳細な考察と比較は考察で行う．
 
 @code:run を@code:impl の定義の下で実行した結果を@txt:res に示す．
-#figure(supplement: "code", caption: [実行例])[
+#fcode(caption: [実行例], label: <code:run>)[
   ```python
   # マシンイプシロンの近似値
   eps = np.finfo(np.float32).eps
 
   print(f"{np.float32(2) + eps + eps =}")
   print(f"{kahan_add(np.array([2, eps, eps], dtype=np.float32))=}")
-  ``` ]<code:run>
+  ``` ]
 //
-#figure(supplement: "code", caption: [実行結果])[
+#ftext(caption: [実行結果], label: <txt:res>)[
   ```txt
   np.float32(2) + eps + eps =np.float32(2.0)
   kahan_add(np.array([2, eps, eps], dtype=np.float32))=np.float32(2.0000002)
-  ``` ]<txt:res>
+  ``` ]
 //
 この結果から，カハンの加算アルゴリズムでは`2 + eps`時の誤差を補正して，最終的にはより近い解を得られていることがわかる．
 

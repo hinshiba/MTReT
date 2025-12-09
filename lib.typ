@@ -1,5 +1,4 @@
 #import "@preview/cjk-unbreak:0.2.0": remove-cjk-break-space
-#import "@preview/zebraw:0.6.1": *
 #import "fastfig.typ": *
 
 // --------------------------------

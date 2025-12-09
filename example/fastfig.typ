@@ -17,14 +17,13 @@
       return ans
   ```]
 
-#ftext(caption: "hoge", placement: auto)[
+#ftext(caption: "hoge", placement: none)[
   ```
   aa
   ```
 ]
 
-@a は
-あああああああああああああああああああああああああああああああああああああああああああああああああ
+@a
 #lorem(1000)
 
 #fcode(caption: "va", label: <b>)[

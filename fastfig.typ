@@ -50,7 +50,7 @@
   txt,
   caption: none,
   label: none,
-  placement: none,
+  placement: bottom,
 ) = {
   show: zebraw.with(background-color: white, lang: false, numbering: false)
   [

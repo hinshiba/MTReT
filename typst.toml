@@ -4,5 +4,5 @@ version = "0.1.1"
 entrypoint = "lib.typ"
 authors = ["hinshiba"]
 license = "MIT"
-description = "Modular Typst REport Template"
+description = "Modular Typst REport Template for ja"
 repository = "https://github.com/hinshiba/MTReT"
