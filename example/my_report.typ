@@ -1,5 +1,4 @@
-#import "../lib.typ": *
-#import "@preview/zebraw:0.6.1": *
+#import "@preview/mtret:0.1.0": *
 #import "@preview/enja-bib:0.1.0": *
 #import bib-setting-plain: *
 

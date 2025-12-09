@@ -1,4 +1,4 @@
-#import "../lib.typ": *
+#import "@preview/mtret:0.1.0": *
 #show: style
 
 

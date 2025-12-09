@@ -1,8 +1,8 @@
 # MTReT
 
-Modular Typst REport Template for ja
+Modular Typst REport Template for ja students.
 
-日本の大学のレポート等での利用を想定したTypst向けのテンプレートです．
+日本の大学のレポート等での利用を想定したTypst向けのスタイル．
 
 ## 機能
 
@@ -20,20 +20,20 @@ Modular Typst REport Template for ja
 2. 以下のように`main.typ`ファイルを作成します．
 
 ```typ
-// ライブラリとスタイルを読み込み
-#import "lib.typ": *
+// パッケージを読み込み
+#import "@preview/mtret:0.1.0": *
 
 // 基本スタイルを適用
 #show: style
 
-// --- ヘッダー情報 ---
+// タイトル関連
 #titles(
   "カハンの加算アルゴリズムの実装と考察", // 表題
   subtitle: "数値計算法 第一回レポート" // 副題
 )
 #name(
-  id: "25B00000",      // 学籍番号など
-  author: "Typst 太郎" // 氏名
+  id: "hinshiba", // 学籍番号など
+  author: "瀕死" // 氏名
 )
 #date_info(
   // 課題の出題日 (任意)
@@ -75,6 +75,6 @@ Modular Typst REport Template for ja
 
 ## 変更履歴
 
-- 0.1.0: 初版リリース．
-- 0.1.1: `fastfig`機能の追加．
-- 0.1.2: 図表の後に改段落しない処理の追加．`fastfig`の`placement`修正．
+- 0.0.1: 初版．
+- 0.0.2: `fastfig`機能の追加．
+- 0.1.0: 図表の後に改段落しない処理の追加．`fastfig`の`placement`修正．
