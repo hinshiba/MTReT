@@ -10,11 +10,13 @@
   caption: none,
   label: none,
   width: 100%,
+  placement: bottom,
 ) = {
   [
     #figure(
       image(path, width: width),
       caption: caption,
+      placement: placement,
     ) #label
   ]
 }
@@ -24,7 +26,7 @@
   code,
   caption: none,
   label: none,
-  placement: none,
+  placement: bottom,
 ) = {
   [
     #figure(
@@ -37,11 +39,7 @@
       ),
       caption: caption,
       kind: "src",
-      placement: if placement == none {
-        bottom
-      } else {
-        placement
-      },
+      placement: placement,
       supplement: "ソースコード",
     ) #label
   ]
@@ -67,11 +65,7 @@
       ),
       caption: caption,
       kind: "txt",
-      placement: if placement == none {
-        bottom
-      } else {
-        placement
-      },
+      placement: placement,
       supplement: "テキスト",
     ) #label
   ]
