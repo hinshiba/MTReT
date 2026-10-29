@@ -1,5 +1,5 @@
-#import "@preview/cjk-unbreak:0.2.1": remove-cjk-break-space
-#import "fastfig.typ": *
+#import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
+#import "@preview/zebraw:0.6.1": zebraw, zebraw-init
 
 // --------------------------------
 // 各種変数
