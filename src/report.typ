@@ -112,7 +112,6 @@
 
   // 日付欄設定
   set align(right)
-  set text()
   if qdate == none {
     today.display(date-format)
   } else {
