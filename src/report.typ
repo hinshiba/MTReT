@@ -34,6 +34,7 @@
   }
 
   show raw: set text(font: typewriter)
+  set figure.caption(separator: "：")
 
   show: codly.set_(lang-position: none)
   show: codly.line-set_(fill: white, stroke: none)
