@@ -6,7 +6,7 @@
 // --------------------------------
 #let serif = ("New Computer Modern", "Harano Aji Mincho")
 #let sans = ("New Computer Modern Sans", "Harano Aji Gothic")
-#let typewriter = ("DejaVu Sans Mono", "Morale")
+#let typewriter = ("DejaVu Sans Mono", "Moralerspace Xenon HW")
 #let title-size = 1.6em
 #let subtitle-size = 1.2em
 #let title-subcontent-size = 1.1em
@@ -33,7 +33,7 @@
     v(-0.5em)
   }
 
-  show raw: set text(font: ("DejaVu Sans Mono", "Moralerspace Xenon HW"))
+  show raw: set text(font: typewriter)
 
   show: codly.set_(lang-position: none)
   show: codly.line-set_(fill: white, stroke: none)
