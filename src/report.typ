@@ -6,7 +6,7 @@
 // --------------------------------
 #let serif = ("New Computer Modern", "Harano Aji Mincho")
 #let sans = ("New Computer Modern Sans", "Harano Aji Gothic")
-#let typewriter = ("DejaVu Sans Mono", "Moralerspace Xenon HW")
+#let typewriter = ("Moralerspace Argon HW", "DejaVu Sans Mono")
 #let title-size = 1.6em
 #let subtitle-size = 1.2em
 #let title-subcontent-size = 1.1em
