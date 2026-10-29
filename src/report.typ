@@ -42,15 +42,6 @@
   doc
 }
 
-// 全角コンマ等への変更
-#let repl-full-en-punctuation(doc) = {
-  show "、": "，"
-  show "。": "．"
-
-  doc
-}
-
-
 // タイトルの出力
 #let titles(title, subtitle: none) = {
   set document(title: title)
