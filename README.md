@@ -15,7 +15,13 @@ Modular Typst REport Template for ja students.
 
 ## 使い方
 
-以下のように`main.typ`ファイルを作成します．
+テンプレートからプロジェクトを作成できます．
+
+```sh
+typst init @preview/mtret
+```
+
+または，以下のように`main.typ`ファイルを作成します．
 
 ````typ
 // パッケージを読み込み
@@ -126,6 +132,7 @@ Modular Typst REport Template for ja students.
 - 見出しの下に2ptの余白を追加
 - パッケージのメタデータに`compiler`と`keywords`を追加
 - 必要なフォントをREADMEに明記
+- `typst init`で使えるテンプレートを追加
 
 #### Changed
 

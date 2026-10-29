@@ -10,3 +10,8 @@ description = "Modular Typst REport sTyle for ja students."
 keywords = ["Japanese", "University", "report"]
 categories = ["report"]
 exclude = ["example"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
