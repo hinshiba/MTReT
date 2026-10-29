@@ -121,6 +121,8 @@ typst init @preview/mtret
 
 ### [Unreleased]
 
+### [0.2.0]
+
 #### Added
 
 - `name`に複数人の組を渡せるように
@@ -170,7 +172,8 @@ typst init @preview/mtret
 
 初版．
 
-[Unreleased]: https://github.com/hinshiba/MTReT
+[Unreleased]: https://github.com/hinshiba/MTReT/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/hinshiba/MTReT/releases/tag/v0.2.0
 [0.1.0]: https://github.com/hinshiba/MTReT/tree/d1912536d2bbc6304a6bfa0ab257bb38c5edeae8
 [0.0.2]: https://github.com/hinshiba/MTReT/tree/eaadc85fd9f4526e655f7fef1b34c980e08ecb64
 [0.0.1]: https://github.com/hinshiba/MTReT/tree/80dcd978845048dba2610af5e68cb1f0df3593e9
