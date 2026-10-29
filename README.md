@@ -12,7 +12,6 @@ Modular Typst REport Template for ja students.
   - `fimg`: 画像を挿入する
   - `fcode`: ソースコードを挿入する．`codly`パッケージを利用
   - `ftext`: 実行結果などを示すテキストブロックを挿入する
-- **句読点のカスタマイズ**: 和文句読点「、」「。」を全角の「，」「．」に置換します．
 
 ## 使い方
 
