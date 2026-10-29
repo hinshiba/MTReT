@@ -61,52 +61,57 @@
 // Figureラッパー
 // --------------------------------
 
-// 画像用
+/// 画像を挿入する.
+///
+/// - src (path, bytes): 画像.文字列のパスはパッケージ基準で解決されるため受け付けない
+/// - caption (content, none): キャプション
+/// - label (label, str, none): ラベル
+/// - alt (str, none): 代替テキスト.PDF/UAでは必須
+/// - width (relative, auto): 画像の幅
+/// - placement (alignment, auto, none): 図の配置
+/// -> content
 #let fimg(
-  path,
+  src,
   caption: none,
   label: none,
+  alt: none,
   width: 100%,
   placement: bottom,
 ) = {
-  [
-    #figure(
-      image(path, width: width),
-      caption: caption,
-      placement: placement,
-    ) #label
-  ]
+  assert(type(src) != str, message: "fimg: パスは`path(\"...\")`のように`path`で渡してください")
+  place-figure(image(src, width: width, alt: alt), label, placement, caption: caption)
 }
 
-// コードブロック
+/// ソースコードを挿入する.
+///
+/// - code (content, path): `raw`ブロックまたはファイルのパス
+/// - lang (str, none): ファイルから読み込む場合の言語
+/// - caption (content, none): キャプション
+/// - label (label, str, none): ラベル
+/// - placement (alignment, auto, none): 図の配置
+/// -> content
 #let fcode(
   code,
+  lang: none,
   caption: none,
   label: none,
   placement: bottom,
-) = {
-  [
-    #figure(
-      block(
-        // align要素はHTML出力で中身ごと捨てられるため，set ruleで寄せる
-        {
-          set align(left)
-          code
-        },
-        breakable: true,
-        stroke: 0.7pt,
-        inset: 0.3em,
-        width: 99%,
-      ),
-      caption: caption,
-      kind: "src",
-      placement: placement,
-      supplement: "ソースコード",
-    ) #label
-  ]
-}
+) = place-figure(
+  frame(as-raw(code, lang), inset: 0.3em),
+  label,
+  placement,
+  caption: caption,
+  kind: "src",
+  supplement: "ソースコード",
+)
 
-// txtブロック
+/// 実行結果などのテキストを挿入する.
+///
+/// - txt (content, path): `raw`ブロックまたはファイルのパス
+/// - caption (content, none): キャプション
+/// - label (label, str, none): ラベル
+/// - placement (alignment, auto, none): 図の配置
+/// -> content
 #let ftext(
   txt,
   caption: none,
@@ -114,24 +119,12 @@
   placement: bottom,
 ) = {
   show: codly.set_(number-enabled: false)
-  [
-    #figure(
-      block(
-        // align要素はHTML出力で中身ごと捨てられるため，set ruleで寄せる
-        {
-          set align(left)
-          txt
-        },
-        breakable: true,
-        stroke: 0.7pt,
-        inset: 0.5em,
-        width: 99%,
-        radius: 0.5em,
-      ),
-      caption: caption,
-      kind: "txt",
-      placement: placement,
-      supplement: "テキスト",
-    ) #label
-  ]
+  place-figure(
+    frame(as-raw(txt, none), inset: 0.5em, radius: 0.5em),
+    label,
+    placement,
+    caption: caption,
+    kind: "txt",
+    supplement: "テキスト",
+  )
 }
