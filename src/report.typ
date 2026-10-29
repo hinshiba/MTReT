@@ -66,16 +66,43 @@
 }
 
 
-// 名前の出力
-#let name(id: none, author) = {
-  set document(author: author)
+/// 文書メタデータ用に`content`を文字列へ変換する.
+///
+/// - it (str, content): 変換対象
+/// -> str
+#let plain(it) = if type(it) == str { it } else if it.has("text") { it.text } else if it.has("children") {
+  it.children.map(plain).sum(default: "")
+} else if it.has("body") { plain(it.body) } else { " " }
+
+/// 学籍番号と氏名の組を出力する.
+///
+/// 1人なら名前付き引数で, 複数人なら組を並べて渡す.
+///
+/// *Example:*
+///
+/// ```example
+/// #name(id: "hinshiba", name: "瀕死")
+/// #name((id: "hinshiba", name: "瀕死"), (id: "moyashi170607 ", name: "こつ子 "))
+/// ```
+///
+/// - members (arguments): 学籍番号`id`と氏名`name`の組
+/// -> content
+#let name(..members) = {
+  assert(
+    members.pos() == () or members.named() == (:),
+    message: "name: `id: a, name: b`か`(id: a, name: b), ...`のどちらかで渡してください",
+  )
+  let members = if members.pos() == () { (members.named(),) } else { members.pos() }
+  set document(author: members.map(m => plain(m.name)))
 
   // 名前生成
   set text(size: title-subcontent-size)
   set align(right)
-  id
-  h(1em)
-  author
+  let pairs = members.map(m => (m.at("id", default: none), m.name))
+  // grid要素はHTML出力で中身ごと捨てられる
+  context if target() == "html" { pairs.map(p => p.filter(x => x != none).join(" ")).join(linebreak()) } else {
+    grid(columns: 2, column-gutter: 1em, row-gutter: par.leading, align: (right), ..pairs.flatten())
+  }
 }
 
 // 日付の出力
