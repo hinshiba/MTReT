@@ -7,5 +7,6 @@ repository = "https://github.com/hinshiba/MTReT"
 authors = ["hinshiba"]
 license = "MIT"
 description = "Modular Typst REport sTyle for ja students."
-exclude = ["example"]
+keywords = ["Japanese", "University", "report"]
 categories = ["report"]
+exclude = ["example"]
