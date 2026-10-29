@@ -37,6 +37,8 @@
 
   show: remove-cjk-break-space
   show: zebraw.with(background-color: white, lang: false)
+  // zebrawはcontextで包むため，これより後に必要
+  show: remove-cjk-break-space
   doc
 }
 
