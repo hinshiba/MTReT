@@ -29,6 +29,7 @@
   set heading(numbering: "1.")
   show heading: it => {
     it
+    v(2pt)
   }
 
   show raw: set text(font: typewriter)
