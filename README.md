@@ -18,7 +18,7 @@ Modular Typst REport Template for ja students.
 
 以下のように`main.typ`ファイルを作成します．
 
-```typ
+````typ
 // パッケージを読み込み
 #import "@preview/mtret:0.1.0": *
 
@@ -55,7 +55,7 @@ Modular Typst REport Template for ja students.
   caption: [Pythonによる実装],
   label: <code:impl>
 )[
-  \`\`\`py
+  ```py
   def kahan_add(vals: NDArray[np.float32]) -> np.float32:
       ans = np.float32(0)
       comp: np.float32 = np.float32(0)
@@ -65,12 +65,12 @@ Modular Typst REport Template for ja students.
           comp = (temp - ans) - x
           ans = temp
       return ans
-  \`\`\`
+  ```
 ]
 
 = 参考文献
 // 参考文献の処理...
-```
+````
 
 より詳細な使い方は`example/my_report.typ`を参照してください．
 
