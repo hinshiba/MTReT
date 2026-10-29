@@ -117,12 +117,38 @@ Modular Typst REport Template for ja students.
 
 #### Added
 
+- `name`に複数人の組を渡せるように
+- `fimg`に代替テキストを指定する`alt`を追加
+- `fcode`と`ftext`にファイルのパスを渡せるように
+- `fcode`には言語を指定する`lang`を追加
+- 図表の`label`に文字列を渡せるように
+- 1ページに収まらない図表を`placement`を無視して本文中で分割するように
+- 見出しの下に2ptの余白を追加
+- パッケージのメタデータに`compiler`と`keywords`を追加
+- 必要なフォントをREADMEに明記
+
 #### Changed
+
+- ソースコードの装飾を`zebraw`から`codly`に変更
+- `fimg`の画像はパスの文字列ではなく`path`で渡すように
+- 公開APIを`style`, `titles`, `name`, `date-info`, `fimg`, `fcode`, `ftext`に限定
+- 図表のキャプションの区切りのコロンの両側に空白を入れるように
+- フォントの優先順位を調整し，ソースコードのフォントをMoralerspaceにした
+- サブタイトルがないときに表題と名前の間を空けるように
+- `readme.md`を`README.md`に改名
+- `example`をローカルの`src/lib.typ`から読み込むように
 
 #### Removed
 
+- うまく実現できなかった関数`repl-full-en-punctuation`を削除
+
 #### Fixed
 
+- `remove-cjk-break-space`が効かない問題を修正
+- 誤ったフォント名と設定漏れを修正
+- `example/my_report.typ`の誤った記述を修正
+- READMEでコードブロック内のコードブロックが正しく表示されない問題を修正
+- READMEの誤った`date-info`の記述を削除
 
 ### [0.1.0] - 2026-08-31
 
