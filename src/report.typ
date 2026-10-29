@@ -82,7 +82,7 @@
 ///
 /// ```example
 /// #name(id: "hinshiba", name: "瀕死")
-/// #name((id: "hinshiba", name: "瀕死"), (id: "moyashi170607 ", name: "こつ子 "))
+/// #name((id: "hinshiba", name: "瀕死"), (id: "moyashi170607", name: "こつ子"))
 /// ```
 ///
 /// - members (arguments): 学籍番号`id`と氏名`name`の組
