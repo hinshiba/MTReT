@@ -18,7 +18,7 @@
   set text(11pt, font: serif, lang: "ja")
   set par(
     first-line-indent: (
-      all: false, // 見出しで問題になるので見出し側で修正
+      all: true,
       amount: 1em,
     ),
     leading: 0.8em,
@@ -29,8 +29,6 @@
   set heading(numbering: "1.")
   show heading: it => {
     it
-    par()[] // 見出しではインデント付き改段落を要する
-    v(-0.5em)
   }
 
   show raw: set text(font: typewriter)
