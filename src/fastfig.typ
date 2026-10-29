@@ -1,4 +1,4 @@
-#import "@preview/zebraw:0.6.1": *
+#import "@preview/codly:2.0.0" as codly
 
 // --------------------------------
 // Figureラッパー
@@ -31,7 +31,11 @@
   [
     #figure(
       block(
-        align(left, code),
+        // align要素はHTML出力で中身ごと捨てられるため，set ruleで寄せる
+        {
+          set align(left)
+          code
+        },
         breakable: true,
         stroke: 0.7pt,
         inset: 0.3em,
@@ -52,11 +56,15 @@
   label: none,
   placement: bottom,
 ) = {
-  show: zebraw.with(background-color: white, lang: false, numbering: false)
+  show: codly.set_(number-enabled: false)
   [
     #figure(
       block(
-        align(left, txt),
+        // align要素はHTML出力で中身ごと捨てられるため，set ruleで寄せる
+        {
+          set align(left)
+          txt
+        },
         breakable: true,
         stroke: 0.7pt,
         inset: 0.5em,

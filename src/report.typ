@@ -1,5 +1,5 @@
 #import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
-#import "@preview/zebraw:0.6.1": zebraw, zebraw-init
+#import "@preview/codly:2.0.0" as codly
 
 // --------------------------------
 // 各種変数
@@ -35,9 +35,10 @@
 
   show raw: set text(font: ("DejaVu Sans Mono", "Moralerspace Xenon HW"))
 
-  show: remove-cjk-break-space
-  show: zebraw.with(background-color: white, lang: false)
-  // zebrawはcontextで包むため，これより後に必要
+  show: codly.set_(lang-position: none)
+  show: codly.line-set_(fill: white, stroke: none)
+  // codlyはgridで組むため，HTML出力では中身ごと捨てられる
+  show raw.where(block: true): it => context if target() == "html" { it } else { codly.new(it) }
   show: remove-cjk-break-space
   doc
 }
