@@ -25,7 +25,7 @@ typst init @preview/mtret
 
 ````typ
 // パッケージを読み込み
-#import "@preview/mtret:0.1.0": *
+#import "@preview/mtret:0.2.0": *
 
 // 基本スタイルを適用
 #show: style
@@ -77,7 +77,7 @@ typst init @preview/mtret
 // 参考文献の処理...
 ````
 
-より詳細な使い方は`example/my_report.typ`を参照してください．
+より詳細な使い方は[`example/my_report.typ`](https://github.com/hinshiba/MTReT/blob/v0.2.0/example/my_report.typ)を参照してください．
 
 ## 必要なフォント
 
@@ -116,6 +116,11 @@ typst init @preview/mtret
 ```
 
 `fimg`に文字列を渡すとエラーになります．
+
+## ライセンス
+
+`template`ディレクトリは[MIT-0](https://spdx.org/licenses/MIT-0.html)，それ以外は[MIT](LICENSE)です．
+テンプレートから作成したファイルは著作権表示なしで自由に利用・再配布できます．
 
 ## 変更履歴
 
