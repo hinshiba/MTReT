@@ -73,6 +73,19 @@ Modular Typst REport Template for ja students.
 
 より詳細な使い方は`example/my_report.typ`を参照してください．
 
+## 必要なフォント
+
+以下のフォントをインストールしてください．未インストールの場合は，括弧内のフォールバックが使われます．
+
+| 用途                   | フォント                                                                         | フォールバック   |
+| ---------------------- | -------------------------------------------------------------------------------- | ---------------- |
+| 本文(明朝)             | [原ノ味明朝](https://github.com/trueroad/HaranoAjiFonts) (Harano Aji Mincho)     | なし             |
+| 見出し・表題(ゴシック) | [原ノ味ゴシック](https://github.com/trueroad/HaranoAjiFonts) (Harano Aji Gothic) | なし             |
+| ソースコード           | [Moralerspace](https://github.com/yuru7/moralerspace) Argon HW                   | DejaVu Sans Mono |
+
+欧文にはTypst同梱のNew Computer Modernを使うため，追加のインストールは不要です．
+原ノ味フォントが無いと日本語がTypst同梱のフォントに含まれず，表示されません．
+
 ## 図表ラッパー
 
 `fimg`, `fcode`, `ftext`は共通して`caption`, `label`, `placement`を受け付けます．
