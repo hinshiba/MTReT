@@ -60,9 +60,13 @@
   // タイトル生成
   set align(center)
   text(weight: "bold", size: title-size, font: sans)[#title]
-  linebreak()
-  v(-1pt)
-  text(weight: "regular", size: subtitle-size, font: sans)[#subtitle]
+  if subtitle == none {
+    v(2pt)
+  } else {
+    linebreak()
+    v(0pt)
+    text(weight: "regular", size: subtitle-size, font: sans)[#subtitle]
+  }
 }
 
 
