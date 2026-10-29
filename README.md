@@ -32,8 +32,10 @@ Modular Typst REport Template for ja students.
 )
 #name(
   id: "hinshiba", // 学籍番号など
-  "瀕死" // 氏名
+  name: "瀕死", // 氏名
 )
+// 共著なら組を並べる
+// #name((id: "a", name: "甲"), (id: "b", name: "乙"))
 #date-info(
   // 課題の出題日 (任意)
   qdate: datetime(year: 2025, month: 10, day: 2)
@@ -72,8 +74,58 @@ Modular Typst REport Template for ja students.
 
 より詳細な使い方は`example/my_report.typ`を参照してください．
 
+## 図表ラッパー
+
+`fimg`, `fcode`, `ftext`は共通して`caption`, `label`, `placement`を受け付けます．
+
+- `label`は`<code:impl>`のほか`"code:impl"`のような文字列でも指定できます．
+- `placement`の既定値は`bottom`です．1ページに収まらない図は`placement`を無視して本文中に置かれ，ページを跨いで分割されます．
+
+### ファイルの指定
+
+パッケージ内で文字列のパスを使うとパッケージを基準に解決されるため，ファイルは`path`で渡します．
+`path`は呼び出したファイルを基準に解決されます．
+
+```typ
+// 画像の挿入．PDF/UA(--pdf-standard ua-1)ではaltが必須
+#fimg(path("img/result.png"), caption: [実行結果], label: <fig:res>, alt: "誤差の推移")
+
+// ファイルからのコード挿入．言語はlangで指定
+#fcode(path("src/kahan.py"), lang: "py", caption: [Pythonによる実装])
+
+// ファイルからのテキスト挿入
+#ftext(path("out.txt"), caption: [実行結果])
+```
+
+`fimg`に文字列を渡すとエラーになります．
+
 ## 変更履歴
 
-- 0.0.1: 初版．
-- 0.0.2: `fastfig`機能の追加．
-- 0.1.0: 図表の後に改段落しない処理の追加．`fastfig`の`placement`修正．
+### [Unreleased]
+
+#### Added
+
+#### Changed
+
+#### Removed
+
+#### Fixed
+
+
+### [0.1.0] - 2026-08-31
+
+- 図表の後に改段落しない処理の追加
+- `fastfig`の`placement`修正
+
+### [0.0.2] - 2026-04-06
+
+`fastfig`機能の追加．
+
+### [0.0.1] - 2025-10-09
+
+初版．
+
+[Unreleased]: https://github.com/hinshiba/MTReT
+[0.1.0]: https://github.com/hinshiba/MTReT/tree/d1912536d2bbc6304a6bfa0ab257bb38c5edeae8
+[0.0.2]: https://github.com/hinshiba/MTReT/tree/eaadc85fd9f4526e655f7fef1b34c980e08ecb64
+[0.0.1]: https://github.com/hinshiba/MTReT/tree/80dcd978845048dba2610af5e68cb1f0df3593e9
