@@ -1,4 +1,4 @@
-#import "@preview/mtret:0.1.0": *
+#import "../src/lib.typ": *
 #import "@preview/enja-bib:0.1.0": *
 #import bib-setting-plain: *
 
@@ -6,7 +6,8 @@
 #show: style
 
 #titles("カハンの加算アルゴリズムの実装と考察", subtitle: "数値計算法 第一回レポート")
-#name(id: "hinshiba", "瀕死")
+#name(id: "09B24486", name: "瀕死")
+// #name((id: "hinshiba", name: "瀕死"), (id: "moyashi170607", name: "こつ子"))
 #date-info(qdate: datetime(year: 2025, month: 10, day: 2))
 
 // #outline()
